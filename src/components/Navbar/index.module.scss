@@ -1,0 +1,57 @@
+@import "../../styles/_variables.scss";
+@import "../../styles/_mixins.scss";
+
+.Navbar {
+  @include flex-container($align: center, $gap: 2.5%);
+  @include box-model($padding: 15px, $width: 100vw);
+  @include element-position($position: relative);
+  background-color: $dark_blue;
+
+  .logo {
+    @include flex-container($justify: space-between, $align: center);
+    cursor: pointer;
+
+    .name {
+      @include box-model($margin: 0 5px);
+    }
+  }
+
+  .menu {
+    @include element-position($position: relative);
+    @include flex-container($justify: space-between, $align: center);
+
+    .toggle {
+      @include flex-container($align: center);
+    }
+
+    .anchor_list {
+      @include element-position($position: absolute, $top: -10px, $left: 25px);
+      @include flex-container($direction: column);
+      @include box-model($width: 100px);
+      background-color: $dark_blue;
+      box-shadow: 0 0 15px $black-0_35;
+      list-style: none;
+
+      .anchor {
+        padding: 5px;
+
+        &:hover {
+          cursor: pointer;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 680px) {
+  .Navbar {
+    .menu {
+      .anchor_list {
+        @include flex-container($direction: row);
+        @include box-model($width: 262px);
+        box-shadow: none;
+      }
+    }
+  }
+}

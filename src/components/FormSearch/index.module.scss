@@ -1,0 +1,42 @@
+@import "../../styles/_mixins.scss";
+@import "../../styles/_variables.scss";
+
+.FormMain {
+  @include flex-container($justify: flex-start);
+  @include element-position(
+    $position: absolute,
+    $top: auto,
+    $right: 15px,
+    $bottom: auto,
+    $left: auto,
+    $z-index: 1
+  );
+  @include box-model($height: 30px);
+  @include border($border: 1px solid $baby_blue, $radius: 8px);
+  background-color: $dark_blue;
+
+  .input {
+    @include box-model($width: 0px, $height: 100%);
+    outline: none;
+    color: $baby_blue;
+    background-color: rgba(0, 0, 0, 0);
+    transition: all 0.2s;
+
+    &.active {
+      @include box-model($padding: 10px, $width: 150px, $height: 100%);
+    }
+  }
+
+  .button {
+    @include flex-container($justify: center, $align: center);
+    @include box-model($width: 30px, $height: 100%);
+    color: $baby_blue;
+    background-color: rgba(0, 0, 0, 0);
+    cursor: pointer;
+  }
+
+  .close_input {
+    @include flex-container($justify: center, $align: center);
+    @include box-model($padding: 0 5px);
+  }
+}
