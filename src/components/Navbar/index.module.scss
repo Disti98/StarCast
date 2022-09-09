@@ -3,7 +3,7 @@
 
 .Navbar {
   @include flex-container($align: center, $gap: 2.5%);
-  @include box-model($padding: 15px, $width: 100vw);
+  @include box-model($padding: 15px, $width: 100%);
   @include element-position($position: relative);
   background-color: $dark_blue;
 
@@ -25,7 +25,12 @@
     }
 
     .anchor_list {
-      @include element-position($position: absolute, $top: -10px, $left: 25px);
+      @include element-position(
+        $position: absolute,
+        $top: -10px,
+        $left: 25px,
+        $z-index: 3
+      );
       @include flex-container($direction: column);
       @include box-model($width: 100px);
       background-color: $dark_blue;

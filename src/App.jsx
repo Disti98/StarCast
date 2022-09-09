@@ -1,7 +1,8 @@
+import { useState } from "react";
 import Navbar from "./components/Navbar";
 import FormSearch from "./components/FormSearch";
+import Hero from "./components/Hero/Hero";
 import styles from "./App.module.scss";
-import { useState } from "react";
 
 function App() {
   const [searchValue, setSearchValue] = useState("");
@@ -11,6 +12,8 @@ function App() {
       <Navbar>
         <FormSearch setSearchValue={setSearchValue} />
       </Navbar>
+      <hr />
+      <Hero />
       <hr />
     </div>
   );

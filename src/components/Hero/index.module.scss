@@ -1,0 +1,77 @@
+@import "../../styles/_mixins.scss";
+@import "../../styles/_variables.scss";
+
+.Hero {
+  @include element-position($position: relative);
+  @include box-model($width: 100%);
+  background-color: $midnight_blue;
+  overflow: hidden;
+
+  .prev_btn {
+    @include flex-container($justify: center, $align: center);
+    @include element-position(
+      $position: absolute,
+      $top: 0,
+      $left: 0,
+      $z-index: 2
+    );
+    @include box-model($width: 5%, $height: 100%);
+
+    &:hover {
+      background: linear-gradient(90deg, $black-0_5 0%, $transparent 100%);
+    }
+  }
+
+  .card {
+    @include flex-container($justify: center, $align: center);
+    @include element-position($position: relative);
+    @include box-model($width: 100%, $height: 100%);
+
+    .img {
+      @include box-model($width: 60%);
+      object-fit: cover;
+      box-shadow: 0 0 50px 50px $dark_blue;
+      opacity: 0.75;
+    }
+
+    h2 {
+      @include element-position(
+        $position: absolute,
+        $top: 20%,
+        $left: 7.5%,
+        $z-index: 1
+      );
+      text-shadow: 0 0 20px $black;
+    }
+
+    p {
+      @include flex-container($justify: center, $align: center);
+      @include element-position(
+        $position: absolute,
+        $right: 10%,
+        $bottom: 10%,
+        $z-index: 1
+      );
+      text-shadow: 0 0 20px $black;
+
+      svg {
+        color: $gold;
+      }
+    }
+  }
+
+  .next_btn {
+    @include flex-container($justify: center, $align: center);
+    @include element-position(
+      $position: absolute,
+      $top: 0,
+      $right: 0,
+      $z-index: 2
+    );
+    @include box-model($width: 5%, $height: 100%);
+
+    &:hover {
+      background: linear-gradient(90deg, $transparent 0%, $black-0_5 100%);
+    }
+  }
+}
