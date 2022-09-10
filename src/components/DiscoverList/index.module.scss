@@ -1,0 +1,69 @@
+@import "../../styles/_variables.scss";
+@import "../../styles/_mixins.scss";
+
+.Main {
+  @include flex-container($direction: column, $gap: 10px);
+  @include box-model($padding: 15px, $width: 100%, $height: 33.33%);
+
+  .head {
+    @include flex-container($align: center, $gap: 10px);
+
+    .title {
+    }
+
+    .prev_btn {
+      @include flex-container($justify: center, $align: flex-end);
+      opacity: 0.7;
+
+      &_dsb {
+        @include flex-container($justify: center, $align: flex-end);
+        opacity: 0.3;
+      }
+
+      &:hover {
+        opacity: 1;
+        svg {
+          text-shadow: 0 0 30px $black;
+        }
+      }
+    }
+
+    .next_btn {
+      @include flex-container($justify: center, $align: flex-end);
+      opacity: 0.7;
+
+      &_dsb {
+        @include flex-container($justify: center, $align: flex-end);
+        opacity: 0.3;
+      }
+
+      &:hover {
+        opacity: 1;
+        svg {
+          text-shadow: 0 0 30px $black;
+        }
+      }
+    }
+  }
+
+  .list {
+    @include flex-container($gap: 10px);
+    overflow: scroll;
+
+    &::-webkit-scrollbar {
+      overflow: hidden;
+      display: inline;
+      height: 20px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-clip: padding-box;
+      background-color: $baby_blue;
+      @include border($border: 5px solid $transparent, $radius: 10px);
+    }
+
+    &::-webkit-scrollbar-corner {
+      background: $transparent;
+    }
+  }
+}

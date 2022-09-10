@@ -1,0 +1,45 @@
+@import "../../styles/_variables.scss";
+@import "../../styles/_mixins.scss";
+
+.Main {
+  @include element-position($position: relative);
+  @include box-model($width: 233px, $height: 349.5px);
+  @include border($radius: 5px);
+  overflow: hidden;
+  flex: 0 0 auto;
+
+  .img {
+    @include box-model($height: 100%);
+    @include border($radius: 5px);
+  }
+
+  .text {
+    @include flex-container($justify: center, $align: center);
+    @include box-model($width: 100%, $height: 100%);
+    @include element-position($position: absolute, $top: 0, $left: 0);
+    @include border($radius: 5px);
+    opacity: 0;
+
+    &:hover {
+      opacity: 1;
+      background-color: $black-0_65;
+    }
+
+    .title {
+      text-align: center;
+      max-width: 80%;
+      max-height: 80%;
+      font-size: 2vmax;
+    }
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .Main {
+    .text {
+      .title {
+        font-size: 4vmax;
+      }
+    }
+  }
+}

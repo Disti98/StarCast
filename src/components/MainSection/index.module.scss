@@ -1,0 +1,13 @@
+@import "../../styles/_mixins.scss";
+@import "../../styles/_variables.scss";
+
+.Main {
+  @include box-model($width: 100vw);
+
+  background: linear-gradient(
+    90deg,
+    $dark_blue 0%,
+    $midnight_blue 50%,
+    $dark_blue 100%
+  );
+}

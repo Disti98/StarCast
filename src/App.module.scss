@@ -1,7 +1,7 @@
 @import "./styles/_variables.scss";
 @import "./styles/_mixins.scss";
 
-.App {
+.Main {
   @include box-model($width: 100vw);
   color: $baby_blue;
 }

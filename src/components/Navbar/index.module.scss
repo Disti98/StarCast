@@ -4,7 +4,8 @@
 .Navbar {
   @include flex-container($align: center, $gap: 2.5%);
   @include box-model($padding: 15px, $width: 100%);
-  @include element-position($position: relative);
+  @include element-position($position: fixed, $top: 0, $z-index: 3);
+  border-bottom: 2px inset;
   background-color: $dark_blue;
 
   .logo {
@@ -29,7 +30,7 @@
         $position: absolute,
         $top: -10px,
         $left: 25px,
-        $z-index: 3
+        $z-index: 4
       );
       @include flex-container($direction: column);
       @include box-model($width: 100px);

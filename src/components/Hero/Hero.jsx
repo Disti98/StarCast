@@ -30,18 +30,18 @@ export default function Hero() {
   };
 
   return (
-    <div className={styles.Hero}>
+    <div className={styles.Main}>
       <span className={styles.prev_btn} onClick={handlePrevOnClick}>
         <IoIosArrowBack />
       </span>
       <div className={styles.card}>
         <img
           className={styles.img}
-          src={`https://image.tmdb.org/t/p/w342${backdrop_path}`}
+          src={`https://image.tmdb.org/t/p/original${backdrop_path}`}
           alt={id}
         />
 
-        <h2>{title}</h2>
+        <h3>{title}</h3>
         <p>
           {vote_average}/10
           <AiFillStar />
