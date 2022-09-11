@@ -37,30 +37,32 @@ export default function Modal({ id, isModalVisible, setIsModalVisible }) {
 
   return (
     <div className={`${styles.Main} ${isActive}`}>
-      <div className={styles.modal}>
-        <div className={styles.left}>
-          <h3 className={styles.title}>{title}</h3>
-          <img
-            className={styles.img}
-            src={`https://image.tmdb.org/t/p/original${poster_path}`}
-            alt={id}
-          />
-          <p className={styles.rating}>
-            {vote_average}/10 <AiFillStar />
-          </p>
-        </div>
-        <div className={styles.right}>
-          <p className={styles.overview}>{overview}</p>
-          <p className={styles.release}>
-            Release: {release_date.split("-").reverse().join("/")}
-          </p>
-          <iframe
-            title={title}
-            className={styles.iframe}
-            src={`https://www.youtube.com/embed/${trailer}?autoplay=1`}
-            frameBorder="0"
-            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          />
+      <div className={styles.content}>
+        <div className={styles.modal}>
+          <div className={styles.left}>
+            <h3 className={styles.title}>{title}</h3>
+            <img
+              className={styles.img}
+              src={`https://image.tmdb.org/t/p/original${poster_path}`}
+              alt={id}
+            />
+            <p className={styles.rating}>
+              {vote_average}/10 <AiFillStar />
+            </p>
+          </div>
+          <div className={styles.right}>
+            <p className={styles.overview}>{overview}</p>
+            <p className={styles.release}>
+              Release: {release_date.split("-").reverse().join("/")}
+            </p>
+            <iframe
+              title={title}
+              className={styles.iframe}
+              src={`https://www.youtube.com/embed/${trailer}?autoplay=1`}
+              frameBorder="0"
+              allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            />
+          </div>
         </div>
         <span className={styles.close} onClick={handleVisibility}>
           <AiOutlineClose />
