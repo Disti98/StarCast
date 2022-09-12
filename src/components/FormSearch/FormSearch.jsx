@@ -33,8 +33,11 @@ export default function FormSearch() {
     setIsInputActive(false);
   };
 
-  const handleTitleOnClick = (title) => {
-    setInputValue(title);
+  const handleTitleOnClick = (id) => {
+    setSearchValue(id);
+    setIsModalVisible(true);
+    setInputValue("");
+    setIsInputActive(false);
   };
 
   useEffect(() => {
@@ -77,7 +80,7 @@ export default function FormSearch() {
             resultsList.map((el, i) => (
               <li
                 className={styles.result}
-                onClick={() => handleTitleOnClick(el.title)}
+                onClick={() => handleTitleOnClick(el.id)}
                 key={i}
               >
                 {el.title} (

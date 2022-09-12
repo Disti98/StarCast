@@ -56,15 +56,15 @@ export default function Navbar({
             </li>
             <li
               className={styles.anchor}
-              onClick={() => scrollToSection(popularRef)}
-            >
-              Upcoming
-            </li>
-            <li
-              className={styles.anchor}
               onClick={() => scrollToSection(upcomingRef)}
             >
               Popular
+            </li>
+            <li
+              className={styles.anchor}
+              onClick={() => scrollToSection(popularRef)}
+            >
+              Upcoming
             </li>
           </ul>
         )}

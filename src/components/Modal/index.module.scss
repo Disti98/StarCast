@@ -164,6 +164,7 @@
             @include box-model($padding: 5%, $width: 100%);
 
             .overview {
+              max-height: fit-content;
               text-shadow: 0 0 10px $black;
               font-size: 2.5vmax;
               overflow: visible;

@@ -62,7 +62,7 @@ export default function Modal({ id, isModalVisible, setIsModalVisible }) {
             <iframe
               title={title}
               className={styles.iframe}
-              src={`https://www.youtube.com/embed/${trailer}?autoplay=1`}
+              src={`https://www.youtube.com/embed/${trailer}`}
               frameBorder="0"
               allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             />
