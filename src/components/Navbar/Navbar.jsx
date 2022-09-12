@@ -2,7 +2,12 @@ import { useState, useRef } from "react";
 import { BiRightArrow, BiDownArrow } from "react-icons/bi";
 import styles from "./index.module.scss";
 
-export default function Navbar({ children }) {
+export default function Navbar({
+  discoverRef,
+  popularRef,
+  upcomingRef,
+  children,
+}) {
   const [isMenuVisible, setIsMenuVisible] = useState(false);
   const navRef = useRef(null);
 
@@ -12,6 +17,12 @@ export default function Navbar({ children }) {
       top: 0,
     });
   };
+
+  const scrollToSection = (ref) =>
+    window.scrollTo({
+      behavior: "smooth",
+      top: ref.current.offsetTop - navRef.current.offsetHeight,
+    });
 
   const handleMenuVisibility = () => setIsMenuVisible(!isMenuVisible);
 
@@ -37,9 +48,24 @@ export default function Navbar({ children }) {
         </div>
         {isMenuVisible && (
           <ul className={styles.anchor_list}>
-            <li className={styles.anchor}>Discover</li>
-            <li className={styles.anchor}>Upcoming</li>
-            <li className={styles.anchor}>Popular</li>
+            <li
+              className={styles.anchor}
+              onClick={() => scrollToSection(discoverRef)}
+            >
+              Discover
+            </li>
+            <li
+              className={styles.anchor}
+              onClick={() => scrollToSection(popularRef)}
+            >
+              Upcoming
+            </li>
+            <li
+              className={styles.anchor}
+              onClick={() => scrollToSection(upcomingRef)}
+            >
+              Popular
+            </li>
           </ul>
         )}
       </div>

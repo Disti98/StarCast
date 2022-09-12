@@ -8,9 +8,6 @@
   .head {
     @include flex-container($align: center, $gap: 10px);
 
-    .title {
-    }
-
     .prev_btn {
       @include flex-container($justify: center, $align: flex-end);
       opacity: 0.7;

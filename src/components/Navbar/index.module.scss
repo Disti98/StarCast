@@ -10,6 +10,7 @@
 
   .logo {
     @include flex-container($justify: space-between, $align: center);
+    text-shadow: 0 0 10px $black;
     cursor: pointer;
 
     .name {
@@ -40,6 +41,7 @@
 
       .anchor {
         padding: 5px;
+        text-shadow: 0 0 10px $black;
 
         &:hover {
           cursor: pointer;

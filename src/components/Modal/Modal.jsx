@@ -11,6 +11,7 @@ export default function Modal({ id, isModalVisible, setIsModalVisible }) {
     poster_path: "",
     overview: "",
     release_date: "",
+    vote_average: 0,
   });
   const { title, poster_path, overview, release_date, vote_average } =
     movieDetails;
@@ -46,9 +47,12 @@ export default function Modal({ id, isModalVisible, setIsModalVisible }) {
               src={`https://image.tmdb.org/t/p/original${poster_path}`}
               alt={id}
             />
-            <p className={styles.rating}>
-              {vote_average}/10 <AiFillStar />
-            </p>
+            {vote_average > 0 && (
+              <p className={styles.rating}>
+                {`${Number(vote_average.toFixed(1))}/10`}
+                <AiFillStar />
+              </p>
+            )}
           </div>
           <div className={styles.right}>
             <p className={styles.overview}>{overview}</p>

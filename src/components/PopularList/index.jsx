@@ -1,3 +1,3 @@
-import DiscoverList from "./DiscorverList";
+import PopularList from "./PopularList";
 
-export default DiscoverList;
+export default PopularList;

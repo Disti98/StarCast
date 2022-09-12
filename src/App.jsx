@@ -1,30 +1,34 @@
-import { useState } from "react";
+import { useRef } from "react";
 import Navbar from "./components/Navbar";
 import FormSearch from "./components/FormSearch";
 import Hero from "./components/Hero/Hero";
+import MainSection from "./components/MainSection";
+import DiscoverList from "./components/DiscoverList";
+import PopularList from "./components/PopularList";
+import UpcomingList from "./components/UpcomingList";
 import styles from "./App.module.scss";
-import MainSection from "./components/MainSection/MainSection";
-import DiscoverList from "./components/DiscoverList/DiscorverList";
-import PopularList from "./components/PopularList/PopularList";
-import UpcomingList from "./components/UpcomingList/UpcomingList";
 
-function App() {
-  const [searchValue, setSearchValue] = useState("");
+export default function App() {
+  const discoverRef = useRef(null);
+  const popularRef = useRef(null);
+  const upcomingRef = useRef(null);
 
   return (
     <div className={styles.Main}>
-      <Navbar>
-        <FormSearch setSearchValue={setSearchValue} />
+      <Navbar
+        discoverRef={discoverRef}
+        popularRef={popularRef}
+        upcomingRef={upcomingRef}
+      >
+        <FormSearch />
       </Navbar>
       <Hero />
       <hr />
       <MainSection>
-        <DiscoverList />
-        <PopularList />
-        <UpcomingList />
+        <DiscoverList discoverRef={discoverRef} />
+        <PopularList popularRef={popularRef} />
+        <UpcomingList upcomingRef={upcomingRef} />
       </MainSection>
     </div>
   );
 }
-
-export default App;

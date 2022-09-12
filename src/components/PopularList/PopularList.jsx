@@ -4,7 +4,7 @@ import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import styles from "./index.module.scss";
 import MovieCard from "../MovieCard/MovieCard.jsx";
 
-export default function PopularList() {
+export default function PopularList({ popularRef }) {
   const [popularList, setPopularList] = useState([
     { title: "", vote_average: 0, poster_path: "" },
   ]);
@@ -25,7 +25,7 @@ export default function PopularList() {
   };
 
   return (
-    <div className={styles.Main}>
+    <div ref={popularRef} className={styles.Main}>
       <div className={styles.head}>
         <h3 className={styles.title}>Popular</h3>
         <span

@@ -4,7 +4,7 @@ import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import styles from "./index.module.scss";
 import MovieCard from "../MovieCard/MovieCard.jsx";
 
-export default function DiscoverList() {
+export default function DiscoverList({ discoverRef }) {
   const [discoverList, setDiscoverList] = useState([
     { title: "", vote_average: 0, poster_path: "" },
   ]);
@@ -25,7 +25,7 @@ export default function DiscoverList() {
   };
 
   return (
-    <div className={styles.Main}>
+    <div ref={discoverRef} className={styles.Main}>
       <div className={styles.head}>
         <h3 className={styles.title}>Discover</h3>
         <span

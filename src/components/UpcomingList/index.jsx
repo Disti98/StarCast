@@ -1,3 +1,3 @@
-import DiscoverList from "./DiscorverList";
+import UpcomingList from "./UpcomingList";
 
-export default DiscoverList;
+export default UpcomingList;

@@ -4,7 +4,7 @@ import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import styles from "./index.module.scss";
 import MovieCard from "../MovieCard/MovieCard.jsx";
 
-export default function UpcomingList() {
+export default function UpcomingList({ upcomingRef }) {
   const [upcomingList, setUpcomingList] = useState([
     { title: "", vote_average: 0, poster_path: "" },
   ]);
@@ -25,7 +25,7 @@ export default function UpcomingList() {
   };
 
   return (
-    <div className={styles.Main}>
+    <div ref={upcomingRef} className={styles.Main}>
       <div className={styles.head}>
         <h3 className={styles.title}>Upcoming</h3>
         <span
